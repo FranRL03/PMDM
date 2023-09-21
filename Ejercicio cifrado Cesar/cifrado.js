@@ -9,6 +9,7 @@ $(document).ready(function () {
 
         var tres = 3;
         var text = $('#mensaje').val();
+        var salto = parseInt($('#saltos').val());
         var valores = [];
         
 
@@ -16,7 +17,7 @@ $(document).ready(function () {
 
             var valor = text.charAt(i).charCodeAt();
 
-            var valorNuevo = (valor - 97 + tres) % 26 + 1;
+            var valorNuevo = (valor - 97 + salto) % 26 + 1;
 
             valores.push(valorNuevo);
 
