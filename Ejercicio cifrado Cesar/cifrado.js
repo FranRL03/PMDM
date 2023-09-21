@@ -10,6 +10,7 @@ $(document).ready(function () {
         var tres = 3;
         var text = $('#mensaje').val();
         var valores = [];
+        var letrasCifradas = [];
         
 
         for (var i = 0; i < text.length; i++) {
@@ -25,16 +26,16 @@ $(document).ready(function () {
         console.log(valores)
         console.log(valorNuevo)
 
-        for(var i = 0; abecedario.length; i++){
+        // for(var i = 0; i < abecedario.length; i++){
 
-            var numeros = valores[i];
+        //     var numeros = valores[i];
 
-            var letra = abecedario[numeros];
+        //     var letra = abecedario[numeros - 97];
 
-        }
+        // }
 
        
-        console.log(letra)
+        // console.log(letra)
         
 
     });
