@@ -10,7 +10,6 @@ $(document).ready(function () {
         var tres = 3;
         var text = $('#mensaje').val();
         var valores = [];
-        var letrasCifradas = [];
         
 
         for (var i = 0; i < text.length; i++) {
