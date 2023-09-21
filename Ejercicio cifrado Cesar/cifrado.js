@@ -21,8 +21,12 @@ $(document).ready(function () {
 
             valores.push(valorNuevo);
 
-        }
+            let elementoDeseado = [abecedario[valores - 1]];
+            
+            console.log(elementoDeseado)
 
+        }
+        
         console.log(valores)
         console.log(valorNuevo)
 
