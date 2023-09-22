@@ -21,26 +21,16 @@ $(document).ready(function () {
 
             valores.push(valorNuevo);
 
-            let elementoDeseado = [abecedario[valores - 1]];
-            
-            console.log(elementoDeseado)
-
+            var elementoDeseado = [abecedario[valores - 1]];
+                
+            console.log(elementoDeseado[i])
+        
         }
+        
         
         console.log(valores)
         console.log(valorNuevo)
-
-        // for(var i = 0; i < abecedario.length; i++){
-
-        //     var numeros = valores[i];
-
-        //     var letra = abecedario[numeros - 97];
-
-        // }
-
        
-        // console.log(letra)
-        
 
     });
 });
