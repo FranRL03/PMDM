@@ -7,30 +7,28 @@ $(document).ready(function () {
         var abecedario = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
             'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-        var tres = 3;
+
         var text = $('#mensaje').val().toLowerCase();
         var salto = parseInt($('#saltos').val());
-        var valores = [];
-        
+
+        var result = '';
 
         for (var i = 0; i < text.length; i++) {
 
-            var valor = text.charAt(i).charCodeAt();
+            var letter = text[i];
 
-            var valorNuevo = (valor - 97 + salto) % 26 + 1;
+            var valor = abecedario.indexOf(letter)
 
-            valores.push(valorNuevo);
-
-            var elementoDeseado = [abecedario[valores - 1]];
-                
-            console.log(elementoDeseado[i])
-        
+            if (valor == -1) {
+                result += letter
+            } else {
+                var valorNuevo = (valor + salto) % abecedario.length;
+                var newLetter = abecedario[valorNuevo];
+                result += newLetter
+            }
         }
-        
-        
-        console.log(valores)
-        console.log(valorNuevo)
-       
+
+        $('#result').text(result);
 
     });
 });
