@@ -6,15 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent {
+  resultado: string = ""
+  operador: string = "";
 
-  numero: number = 0
-
-  numero2: number = 0;
-
-  b = 0;
-
-  result = 0;
-  getSum() {
-    this.result = this.numero + this.b;
+  agregarNumero(numero: number) {
+    this.resultado += numero.toString();
   }
+
+  agregarOperador(operador: string) {
+    this.resultado += operador;
+  }
+
+  calcularResultado() {
+    if (this.operador === '+') {
+      const numeros = this.resultado.split('+');
+      if (numeros.length === 2) {
+        const resultado = parseFloat(numeros[0]) + parseFloat(numeros[1]);
+        this.resultado = resultado.toString();
+      }
+    }
+    this.operador = "";
+  }
+
 }
