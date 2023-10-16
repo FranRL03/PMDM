@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Calculator</h4>
+    </div>
+    <div class="card-body">
+        <!-- <p>A: <input type="number" value="" /></p>
+        <p>B: <input type="number" value="" /></p>
+        <p><button (click)="getSum()" class="btn btn-primary btn-sm">Sumar</button></p>
+        <p>Result A+B = {{result}}</p> -->
+        <form id="calculadora">
+            <table>
+                <tr>
+                    <td colspan="4"><input type="text" readonly id="resultado"></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="clear" class="operacion">C</button></td>
+                    <td><button type="button" id="dividir" class="operacion">/</button></td>
+                    <td><button type="button" id="multiplicar" class="operacion">X</button></td>
+                    <td rowspan="2"><button type="button" id="restar" class="operacion">-</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button">1</button></td>
+                    <td><button type="button">2</button></td>
+                    <td><button type="button">3</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button">4</button></td>
+                    <td><button type="button">5</button></td>
+                    <td><button type="button">6</button></td>
+                    <td rowspan="2"><button type="button" id="sumar" class="operacion">+</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button">7</button></td>
+                    <td><button type="button">8</button></td>
+                    <td><button type="button">9</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="button">0</button></td>
+                    <td colspan="2"><button type="button" id="igual" class="operacion">=</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
