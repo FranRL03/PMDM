@@ -11,16 +11,16 @@ const STUDENTS: Student[] = [
     email: 'fran@gmail.com',
     sex: 'H',
     age: 20,
-    subjects: [
-      {
-        name: 'HTML',
-        hours: 20
-      },
-      {
-        name: 'AD',
-        hours: 40
-      }
-    ],
+    // subjects: [
+    //   {
+    //     name: 'HTML',
+    //     hours: 20
+    //   },
+    //   {
+    //     name: 'AD',
+    //     hours: 40
+    //   }
+    // ],
     paid: false,
   },
   {
@@ -31,16 +31,16 @@ const STUDENTS: Student[] = [
     email: 'jj@gmail.com',
     sex: 'H',
     age: 27,
-    subjects: [
-      {
-        name: 'HTML',
-        hours: 10
-      },
-      {
-        name: 'AD',
-        hours: 8
-      }
-    ],
+    // subjects: [
+    //   {
+    //     name: 'HTML',
+    //     hours: 10
+    //   },
+    //   {
+    //     name: 'AD',
+    //     hours: 8
+    //   }
+    // ],
     paid: true,
   }
 ]

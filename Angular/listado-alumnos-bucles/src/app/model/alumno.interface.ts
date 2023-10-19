@@ -10,7 +10,7 @@ export interface Student {
     email: string;
     sex: string;
     age: number;
-    subjects: SchoolSubject[];
+    //subjects: SchoolSubject[];
     paid: boolean;
 }
 
