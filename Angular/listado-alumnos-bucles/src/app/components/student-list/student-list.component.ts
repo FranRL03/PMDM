@@ -48,19 +48,19 @@ const STUDENTS: Student[] = [
 
 
 
-@Component({
-  selector: 'app-student-list',
-  templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.css']
-})
-export class StudentListComponent {
+// @Component({
+//   selector: 'app-student-list',
+//   templateUrl: './student-list.component.html',
+//   styleUrls: ['./student-list.component.css']
+// })
+// export class StudentListComponent {
 
-  studentList = STUDENTS;
+//   studentList = STUDENTS;
 
-  getPaidString(student: Student) {
-    return student.paid ? 'Yes' : 'No';
-  }
+//   getPaidString(student: Student) {
+//     return student.paid ? 'Yes' : 'No';
+//   }
 
-}
+// }
 
 
