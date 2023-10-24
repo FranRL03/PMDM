@@ -1,0 +1,9 @@
+<div class="card">
+    <img [src]="getPeopleImage()" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{people.name}}</h5>
+      <p class="card-text">{{people.url}}
+      </p>
+      <button class="btn btn-primary" (click)="peopleDetails()">View detail</button>
+    </div>
+  </div>
