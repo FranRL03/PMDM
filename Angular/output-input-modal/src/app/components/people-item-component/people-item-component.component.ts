@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { People } from 'src/app/models/people-list.interface';
 
 @Component({
@@ -17,6 +18,19 @@ getPeopleImage() {
 
 peopleDetails(){
  this.peopleClick.emit(this.people.name)
+}
+
+constructor(private modalService: NgbModal) { }
+
+open(modal: any){
+  this.people.name;
+  this.people.height;
+  this.people.gender;
+  this.people.birth_year;
+  this.modalService.open(modal,
+    {
+      keyboard: false
+    });
 }
 
 }

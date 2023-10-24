@@ -4,6 +4,24 @@
       <h5 class="card-title">{{people.name}}</h5>
       <p class="card-text">{{people.url}}
       </p>
-      <button class="btn btn-primary" (click)="peopleDetails()">View detail</button>
+      <!-- <button class="btn btn-primary" (click)="peopleDetails()">View detail</button> -->
+      <button class="btn btn-primary" (click)="open(peopleModal)">View detail</button>
     </div>
   </div>
+
+
+  <ng-template #peopleModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <h6>{{people.name}}</h6>
+        <h6>{{people.height}}</h6>
+        <h6>{{people.gender}}</h6>
+        <h6>{{people.birth_year}}</h6>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template> 
