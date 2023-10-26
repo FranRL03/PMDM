@@ -14,7 +14,7 @@ export class SimpsonItemComponent {
 
 
   simpsonDetails() {
-    this.simpsonClick.emit(this.simpson._id)
+    this.simpsonClick.emit(this.simpson.Nombre);
   }
 
 }

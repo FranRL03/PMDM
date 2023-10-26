@@ -14,7 +14,7 @@ export class SimpsonService {
     return this.http.get<SimpsonsListResponse>('https://apisimpsons.fly.dev/api/personajes');
   }
 
-  getSimpsonId(id: string): Observable<Simpson> {
-    return this.http.get<Simpson>(`https://apisimpsons.fly.dev/api/personajes/${id}`);
+  getSimpsonId(nombre: string): Observable<Simpson> {
+    return this.http.get<Simpson>(`https://apisimpsons.fly.dev/api/personajes/find/${nombre}`);
   }
 }

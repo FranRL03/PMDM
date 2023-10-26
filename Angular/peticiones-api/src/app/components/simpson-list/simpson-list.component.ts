@@ -20,10 +20,16 @@ export class SimpsonListComponent implements OnInit {
       this.simpsonList = resp.docs);
   }
 
-  open(modal: any, id: string) {
-    this.simpsonService.getSimpsonId(id).subscribe(resp =>
-      this.simpsonSelected = resp._id);
-    this.modalService.open(modal);
+  open(modal: any, nombre: string) {
+    this.simpsonService.getSimpsonId(nombre).subscribe(resp => {
+      this.simpsonSelected = resp
+      // el modal service lo  he puesto dentro del subcribe para que se ejecute
+      // primero la consulta y leugo el modal porque si no el modal sale vacío
+      this.modalService.open(modal)
+    });
+
+
+
   }
 
 

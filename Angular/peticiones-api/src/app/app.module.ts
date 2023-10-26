@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { SimpsonItemComponent } from './components/simpson-item/simpson-item.component';
-import { SimpsonListComponent } from './components/simpson-list/SimpsonListComponent';
+import { SimpsonListComponent } from './components/simpson-list/simpson-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
