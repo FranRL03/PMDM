@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { PeopleListComponentComponent } from './components/people-list-component/people-list-component.component';
 import { PeopleItemComponentComponent } from './components/people-item-component/people-item-component.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SimpsonItemComponent } from './components/simpson-item/simpson-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleListComponentComponent,
-    PeopleItemComponentComponent
+    PeopleItemComponentComponent,
+    SimpsonItemComponent
   ],
   imports: [
     BrowserModule,

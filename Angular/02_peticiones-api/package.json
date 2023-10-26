@@ -1,5 +1,5 @@
 {
-  "name": "peticiones-api",
+  "name": "02-peticiones-api",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

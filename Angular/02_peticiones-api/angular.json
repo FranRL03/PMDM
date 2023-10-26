@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "peticiones-api": {
+    "02_peticiones-api": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/peticiones-api",
+            "outputPath": "dist/02_peticiones-api",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "peticiones-api:build:production"
+              "browserTarget": "02_peticiones-api:build:production"
             },
             "development": {
-              "browserTarget": "peticiones-api:build:development"
+              "browserTarget": "02_peticiones-api:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "peticiones-api:build"
+            "browserTarget": "02_peticiones-api:build"
           }
         },
         "test": {

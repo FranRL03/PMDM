@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SimpsonItemComponent } from './components/simpson-item/simpson-item.component';
-import { SimpsonListComponent } from './components/simpson-list/simpson-list.component';
-import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PeopleListComponent } from './components/people-list/people-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PeopleItemComponent } from './components/people-item/people-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimpsonItemComponent,
-    SimpsonListComponent
+    PeopleItemComponent,
+    PeopleListComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
