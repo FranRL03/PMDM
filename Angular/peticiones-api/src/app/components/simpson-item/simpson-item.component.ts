@@ -11,11 +11,11 @@ export class SimpsonItemComponent {
   @Input() simpson!: Simpson;
   @Output() simpsonClick = new EventEmitter<string>();
 
-  open(){
-    this.simpson.Estado;
-    this.simpson.Genero;
-    this.simpson.Historia;
+
+
+  simpsonDetails() {
+    this.simpsonClick.emit(this.simpson._id)
   }
-  
+
 }
 
