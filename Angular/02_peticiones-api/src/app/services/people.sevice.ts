@@ -19,4 +19,8 @@ export class PeopleListService {
   getPeopleId(id: string): Observable<PeopleDetailsResponse>{
     return this.http.get<PeopleDetailsResponse>(`https://rickandmortyapi.com/api/character/${id}`)
   }
+
+  getPagination(num: number): Observable<PeopleListResponse>{
+    return this.http.get<PeopleListResponse>(`https://rickandmortyapi.com/api/character/?page=${num}`)
+  }
 }

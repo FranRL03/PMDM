@@ -1,7 +1,7 @@
 import { Component, TemplateRef } from '@angular/core';
 import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { PeopleDetailsResponse } from 'src/app/model/people-details.interface';
-import { People } from 'src/app/model/people-list.interface';
+import { Info, People } from 'src/app/model/people-list.interface';
 import { PeopleListService } from 'src/app/services/people.sevice';
 
 @Component({
@@ -12,7 +12,8 @@ import { PeopleListService } from 'src/app/services/people.sevice';
 export class PeopleListComponent {
 
   peopleList: People[] = [];
-  peopleSelected!: PeopleDetailsResponse
+  peopleSelected!: PeopleDetailsResponse;
+  page = 1; 
 
   constructor(private peopleService: PeopleListService, private modalService: NgbModal){ }
 
@@ -27,4 +28,11 @@ export class PeopleListComponent {
           this.modalService.open(modal);
         });
     }
+
+  pagination(){
+    this.peopleService.getPagination(this.page).subscribe( resp =>{
+      this.peopleList = resp.results;
+    });
+  }
+  
 }

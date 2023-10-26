@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 import { PeopleListComponent } from './components/people-list/people-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PeopleItemComponent } from './components/people-item/people-item.component';
@@ -17,7 +18,8 @@ import { PeopleItemComponent } from './components/people-item/people-item.compon
   imports: [
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbPagination
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,3 +19,7 @@
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
   </div>
 </ng-template>
+
+<br>
+
+<ngb-pagination [collectionSize]="70" [(page)]="page" (click)="pagination()" aria-label="Default pagination"></ngb-pagination>
