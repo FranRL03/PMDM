@@ -13,6 +13,7 @@ export class SimpsonListComponent implements OnInit {
 
   simpsonList: Simpson[] = [];
   simpsonSelected: SimpsonDetails[] = [];
+  page = ''
 
   constructor(private simpsonService: SimpsonService, private modalService: NgbModal) { }
 
