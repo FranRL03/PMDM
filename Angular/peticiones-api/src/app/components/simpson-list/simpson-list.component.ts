@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { SimpsonDetails } from 'src/app/model/simpson-details.interface';
 import { Simpson } from 'src/app/model/simpsons-list.interface';
 import { SimpsonService } from 'src/app/service/simpson.service';
 
@@ -11,7 +12,7 @@ import { SimpsonService } from 'src/app/service/simpson.service';
 export class SimpsonListComponent implements OnInit {
 
   simpsonList: Simpson[] = [];
-  simpsonSelected!: Simpson;
+  simpsonSelected: SimpsonDetails[] = [];
 
   constructor(private simpsonService: SimpsonService, private modalService: NgbModal) { }
 
@@ -20,17 +21,15 @@ export class SimpsonListComponent implements OnInit {
       this.simpsonList = resp.docs);
   }
 
-  open(modal: any, nombre: string) {
-    this.simpsonService.getSimpsonId(nombre).subscribe(resp => {
-      this.simpsonSelected = resp
+  open(nombre: string, modal: any) {
+    this.simpsonService.getSimpsonName(nombre).subscribe(resp2 => {
+      this.simpsonSelected = resp2.result;
       // el modal service lo  he puesto dentro del subcribe para que se ejecute
       // primero la consulta y leugo el modal porque si no el modal sale vacío
-      this.modalService.open(modal)
+      this.modalService.open(modal);
     });
-
-
-
   }
+
 
 
 }
