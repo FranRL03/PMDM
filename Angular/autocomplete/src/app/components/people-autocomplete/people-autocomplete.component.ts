@@ -11,23 +11,22 @@ import { PeopleListService } from 'src/app/services/people.sevice';
 })
 export class PeopleAutocompleteComponent{
 
-
   peopleCtrl = new FormControl();
   filterPeople: Observable<People[]>;
   people : People[] = [];
-  
 
-  constructor() {
+  constructor(private peopleService: PeopleListService) {
     this.filterPeople = this.peopleCtrl.valueChanges.pipe(
-      startWith(''),
-      map(people => (people ? this._filterPeople(people) : this.people.slice())),
+      startWith(" "),
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap(people => this.peopleService.getPeopleList()),
+      map(response => response.results),
     );
-  }
 
-  private _filterPeople(value: string): People[] {
-    const filterValue = value.toLowerCase();
-
-    return this.people.filter(people => people.name.toLowerCase().includes(filterValue));
+    this.filterPeople.subscribe(data => {
+      console.log('Datos de autocompletado:', data);
+    });
   }
 
 }
