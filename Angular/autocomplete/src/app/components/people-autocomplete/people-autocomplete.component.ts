@@ -9,11 +9,11 @@ import { PeopleListService } from 'src/app/services/people.sevice';
   templateUrl: './people-autocomplete.component.html',
   styleUrls: ['./people-autocomplete.component.css']
 })
-export class PeopleAutocompleteComponent{
+export class PeopleAutocompleteComponent {
 
   peopleCtrl = new FormControl();
   filterPeople: Observable<People[]>;
-  people : People[] = [];
+  people: People[] = [];
 
   constructor(private peopleService: PeopleListService) {
     this.filterPeople = this.peopleCtrl.valueChanges.pipe(

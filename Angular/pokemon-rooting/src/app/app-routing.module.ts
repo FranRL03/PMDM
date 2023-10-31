@@ -7,7 +7,6 @@ import { BerryListComponent } from './components/berry-list/berry-list.component
 const routes: Routes = [
   { path: 'list', component: PokemonListComponent },
   { path: 'berry', component: BerryListComponent },
-  { path: 'detail', component: PokemonListComponent },
   { path: '', pathMatch: 'full', redirectTo: '/list' },
   { path: '**', component: PageNotFoundComponent },
 ];
