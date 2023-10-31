@@ -11,6 +11,10 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getMoviePopularList(): Observable<MovieListResponse> {
-    return this.http.get<MovieListResponse>('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=b448b25869241da85a01f82d0167801c')
+    return this.http.get<MovieListResponse>('https://api.themoviedb.org/3/movie/popular?api_key=b448b25869241da85a01f82d0167801c')
+  }
+
+  getMovieTopRated(): Observable<MovieListResponse> {
+    return this.http.get<MovieListResponse>('https://api.themoviedb.org/3/movie/top_rated?api_key=b448b25869241da85a01f82d0167801c')
   }
 }
