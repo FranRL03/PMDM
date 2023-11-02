@@ -17,12 +17,12 @@ export class MovieTopRatedComponent {
   constructor(private movieService: MovieService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.movieService.getMovieTopRated().subscribe(resp =>
+    this.movieService.getTopRated().subscribe(resp =>
       this.movieTopRated = resp.results);
   }
 
-  open(id: number, modal: any){
-    this.movieService.getMovieId(id).subscribe(resp =>{
+  open(id: number, modal: any) {
+    this.movieService.getId(id).subscribe(resp => {
       this.movieSelected = resp;
       this.modalService.open(modal);
     });

@@ -16,16 +16,14 @@ export class MoviePopularListComponent implements OnInit {
   constructor(private movieService: MovieService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.movieService.getMoviePopularList().subscribe(resp =>
+    this.movieService.getPopularList().subscribe(resp =>
       this.movieList = resp.results);
   }
 
-  open(id: number, modal: any){
-    this.movieService.getMovieId(id).subscribe(resp =>{
+  open(id: number, modal: any) {
+    this.movieService.getId(id).subscribe(resp => {
       this.movieSelected = resp;
       this.modalService.open(modal);
     });
   }
-
-
 }
