@@ -1,3 +1,23 @@
-<app-movie-popular-list></app-movie-popular-list>
+<app-movie-popular-list (onMovieDetailClick)="onMoviePopularClick($event, movieModal)"></app-movie-popular-list>
 <hr class="w-75">
 <app-movie-top-rated></app-movie-top-rated>
+
+
+<ng-template #movieModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{movieSelected.title}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <span><strong>Adult: </strong>{{movieSelected.adult}}</span>
+        <hr>
+        <span><strong>Original lenguage: </strong>{{movieSelected.original_language}}</span>
+        <hr>
+        <span><strong>Popularity: </strong>{{movieSelected.popularity}}</span>
+        <hr>
+        <span><strong>Description: </strong>{{movieSelected.overview}}</span>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>

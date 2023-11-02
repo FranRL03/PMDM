@@ -1,6 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { MovieDetailsResponse } from 'src/app/models/movie-details.interface';
 import { Movie } from 'src/app/models/movie-list.interface';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -11,17 +9,18 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MoviePopularListComponent implements OnInit {
   movieList: Movie[] = [];
-  @Output() onMovieDetailClick = new EventEmitter<number>();
+  pag = 1;
 
-
-  constructor(private movieService: MovieService, private modalService: NgbModal) { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.movieService.getPopularList().subscribe(resp =>
       this.movieList = resp.results);
   }
 
-  onMovieClick(id: number) {
-    this.onMovieDetailClick.emit(id);
+  paginacion() {
+    this.movieService.getPagina(this.pag).subscribe(resp => {
+      this.movieList = resp.results;
+    })
   }
 }

@@ -1,0 +1,6 @@
+<div class="container">
+  <app-movie-item class="list-group-item" *ngFor="let m of movieList" [movie]="m"></app-movie-item>
+</div>
+
+<ngb-pagination [collectionSize]="70" [(page)]="pag" (click)="paginacion()"
+  aria-label="Default pagination"></ngb-pagination>
