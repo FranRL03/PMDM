@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { MovieDetailsResponse } from 'src/app/models/movie-details.interface';
+import { Component, Input, OnInit } from '@angular/core';
+import {  ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { padNumber } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { Movie } from 'src/app/models/movie-list.interface';
 
 @Component({
@@ -7,13 +8,15 @@ import { Movie } from 'src/app/models/movie-list.interface';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent {
+export class MovieDetailsComponent  implements OnInit{
 
-  @Input() movieDetails!: MovieDetailsResponse;
-  movieListDetails: Movie [] = [];
+  movieDetails!: MovieDetailsComponent;
 
-  getImage() {
-    return `https://www.themoviedb.org/t/p/w220_and_h330_face${this.movieDetails.poster_path}`
+
+  constructor(private rutaActiva: ActivatedRoute) { }
+
+  ngOnInit() {
+    
   }
 
 }
