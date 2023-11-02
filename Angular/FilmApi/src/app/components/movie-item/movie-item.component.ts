@@ -9,13 +9,13 @@ import { Movie } from 'src/app/models/movie-list.interface';
 export class MovieItemComponent {
 
   @Input() movie!: Movie;
-  @Output() movieClick = new EventEmitter<number>;
+  @Output() movieClick = new EventEmitter<number>();
 
   getImage() {
     return `https://www.themoviedb.org/t/p/w220_and_h330_face${this.movie.poster_path}`
   }
 
-  Info(){
+  Info() {
     this.movieClick.emit(this.movie.id);
   }
 
