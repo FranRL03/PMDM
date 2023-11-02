@@ -10,6 +10,7 @@ import { MoviePopularListComponent } from './components/movie-popular-list/movie
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { PageHomeComponent } from './ui/page-home/page-home.component';
 import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.compon
     MoviePopularListComponent,
     MovieItemComponent,
     PageHomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
