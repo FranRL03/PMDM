@@ -1,5 +1,6 @@
 <div class="container">
-  <app-movie-item class="list-group-item" *ngFor="let m of movieList" [movie]="m"></app-movie-item>
+  <app-movie-item class="list-group-item" *ngFor="let m of movieList" [movie]="m"
+    (click)="openDetails(m)"></app-movie-item>
 </div>
 
 <ngb-pagination [collectionSize]="70" [(page)]="pag" (pageChange)="paginacion()"
