@@ -11,6 +11,8 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
 import { PageHomeComponent } from './ui/page-home/page-home.component';
 import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +21,23 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     MovieItemComponent,
     PageHomeComponent,
     PageNotFoundComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 2,
+      innerStrokeWidth: 0,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      backgroundColor: "#000000",
+      animationDuration: 300
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
