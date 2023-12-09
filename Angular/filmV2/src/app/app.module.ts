@@ -13,7 +13,6 @@ import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.compon
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +21,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     PageHomeComponent,
     PageNotFoundComponent,
     MovieDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
