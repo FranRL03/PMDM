@@ -1,0 +1,68 @@
+nav {
+    padding: 0px;
+}
+
+.navbar-brand img {
+    width: 200px;
+}
+
+a.navbar-brand {
+    padding: 0px;
+    padding-top: 10px;
+}
+
+nav {
+    background-color: black !important;
+}
+
+.full-width {
+    width: 100%;
+}
+
+ul li {
+    margin-left: 10%;
+}
+
+.row a:first-child {
+    margin-left: 2%;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+}
+
+.navbar-nav a:hover {
+    color: rgb(215, 215, 215);
+}
+
+#user {
+    display: flex;
+    padding-right: 0px;
+}
+
+#user a p {
+    margin-bottom: 0px;
+    padding-top: 8px;
+}
+
+#user img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+}
+
+#login {
+    height: 40px;
+}
+
+#login:hover {
+    background-color: rgb(179, 179, 179);
+
+}
+
+.nav-item.active a.nav-link {
+    color: #d64361 !important;
+}
