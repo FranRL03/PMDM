@@ -1,10 +1,11 @@
 export const environment = {
     firebaseConfig: {
-        apiKey: "AIzaSyBpB6zmJKFyr_R_agAXMBmLfKagJMrTmLs",
-        authDomain: "fir-cms-cb14a.firebaseapp.com",
-        projectId: "fir-cms-cb14a",
-        storageBucket: "fir-cms-cb14a.appspot.com",
-        messagingSenderId: "455067148053",
-        appId: "1:455067148053:web:29019baf557a4a4015d31c"
+        apiKey: "AIzaSyBB8Afy5Nw8YSLwa-tfpkKEsd2DAzOG63M",
+        authDomain: "juego-aa042.firebaseapp.com",
+        projectId: "juego-aa042",
+        storageBucket: "juego-aa042.appspot.com",
+        messagingSenderId: "990892690357",
+        appId: "1:990892690357:web:b22d6dc9268040e11b27fc",
+        measurementId: "G-9NB66QZ96M"
     }
 };
