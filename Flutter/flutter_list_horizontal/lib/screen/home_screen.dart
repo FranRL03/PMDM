@@ -27,6 +27,52 @@ class HomeScreen extends StatelessWidget {
               ActorsList(name: 'Morgan', apellido: 'Freeman', url: 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/jPsLqiYGSofU4s6BjrxnefMfabb.jpg'),
             ]),
          ),
+         const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.home),
+                        Text('Home')
+                      ],
+                    ),
+                  ),
+                     Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.camera_roll_outlined, color: Colors.grey),
+                          Text('Booking', style: TextStyle(color: Colors.grey),)
+                        ],
+                        ),
+                     ),
+                   Padding(
+                     padding: EdgeInsets.only(left: 10, right: 10),
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.bookmark_remove_outlined, color: Colors.grey),
+                        Text('List', style: TextStyle(color: Colors.grey))
+                      ],
+                                       ),
+                   ),
+                  Column(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.person_outline, color: Colors.grey),
+                      Text('Profile', style: TextStyle(color: Colors.grey))
+                    ],
+                  ),
+                ],
+              )
+            ],
+          ),
       ]),   
       ),
      

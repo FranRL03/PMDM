@@ -32,8 +32,8 @@ class ActorsList extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text(name),
-            Text(apellido),
+            Text(name, style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 35),),
+            Text(apellido, style: const TextStyle(fontWeight: FontWeight.w200, fontSize: 17),),
           ]),
         ]),
       ),
