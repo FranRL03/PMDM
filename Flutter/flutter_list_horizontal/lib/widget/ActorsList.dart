@@ -22,18 +22,23 @@ class ActorsList extends StatelessWidget {
                 shape: BoxShape.rectangle,
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(800), // Controla la curvatura superior
-                  bottom: Radius.circular(800), // Controla la curvatura inferior
+                  bottom:
+                      Radius.circular(800), // Controla la curvatura inferior
                 ),
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(url),
                 ),
               )),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            Text(name, style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 35),),
-            Text(apellido, style: const TextStyle(fontWeight: FontWeight.w200, fontSize: 17),),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(
+              name,
+              style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 35),
+            ),
+            Text(
+              apellido,
+              style: const TextStyle(fontWeight: FontWeight.w200, fontSize: 17),
+            ),
           ]),
         ]),
       ),
