@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navegation/widget/details.dart';
 
 class RentCar extends StatelessWidget {
   static const tittle = TextStyle(fontSize: 20);
@@ -6,7 +7,9 @@ class RentCar extends StatelessWidget {
   static const price =
       TextStyle(color: Colors.blue, fontWeight: FontWeight.w400, fontSize: 20);
 
-  const RentCar({super.key});
+  final String nombre, url;
+
+  const RentCar({super.key, required this.nombre, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -23,17 +26,16 @@ class RentCar extends StatelessWidget {
               child: Container(
                   width: 150,
                   height: 150,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                          'https://assets.stickpng.com/thumbs/59db69d33752880e93e16efc.png'),
+                      image: NetworkImage(url),
                     ),
                   )),
             ),
-            const Text(
-              'Rayo McQueen',
+            Text(
+              nombre,
               style: tittle,
             ),
             const Text(
@@ -86,7 +88,12 @@ class RentCar extends StatelessWidget {
                 style: price,
               ),
               ElevatedButton(
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Details()),
+                  );
+                },
                 style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(
                       const Size(50, 50)), // Tamaño del botón
@@ -96,10 +103,6 @@ class RentCar extends StatelessWidget {
                   style: price,
                 ),
               ),
-              // Text(
-              //   'Detalles',
-              //   style: price,
-              // )
             ])
           ]),
         ),
