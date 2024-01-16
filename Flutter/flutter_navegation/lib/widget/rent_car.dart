@@ -10,6 +10,9 @@ class RentCar extends StatelessWidget {
   final String nombre, url;
 
   const RentCar({super.key, required this.nombre, required this.url});
+    // const Details({Key? key, required this.nombre, required this.url})
+    //   : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +86,7 @@ class RentCar extends StatelessWidget {
               child: Divider(),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              const Text(
+               const Text(
                 '35.000€',
                 style: price,
               ),
@@ -91,7 +94,7 @@ class RentCar extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Details()),
+                    MaterialPageRoute(builder: (context) => Details(nombre: nombre, url: url,)),
                   );
                 },
                 style: ButtonStyle(
