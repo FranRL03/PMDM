@@ -4,12 +4,12 @@ import 'package:flutter_pokemon/models/pokemon_response/result.dart';
 
 class PokemonItem extends StatelessWidget {
 
-// final PokemonResponse pokemonResponse;
+final PokemonResponse pokemonResponse;
 
-final Result result;
+// final Result result;
 
 
-  const PokemonItem({super.key, required this.result});
+  const PokemonItem({super.key, required this.pokemonResponse});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ final Result result;
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(result.name.toString())
+          // Text(pokemonResponse.name.toString())
         ],
       ),
     );

@@ -25,6 +25,12 @@ class _PokemonWidgetState extends State<PokemonWidget> {
     return body.map((e) => PokemonResponse.fromJson(e)).toList();
   }
 
+    @override
+  void initState() {
+    super.initState();
+    getPosts();
+  }
+
  @override
   Widget build(BuildContext context) {
     return Scaffold(
