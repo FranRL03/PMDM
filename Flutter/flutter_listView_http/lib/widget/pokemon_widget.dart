@@ -1,81 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokemon/models/pokemon_response/pokemon_response.dart';
-import 'package:flutter_pokemon/models/pokemon_response/result.dart';
+import 'package:flutter_pokemon/models/pokemon_item/pokemon_item.dart';
 import 'package:flutter_pokemon/widget/pokemon_item.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
-
-class PokemonWidget extends StatefulWidget {
-  const PokemonWidget({super.key});
-
-  @override
-  State<PokemonWidget> createState() => _PokemonWidgetState();
+Future<PokemonOne> fetchPokemon(String name) async {
+  final response =
+      await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon/$name'));
+  if (response.statusCode == 200) {
+    return PokemonOne.fromJson(response.body);
+  } else {
+    throw Exception('Failed to load album');
+  }
 }
 
-class _PokemonWidgetState extends State<PokemonWidget> {
+class PokemonWidget extends StatefulWidget {
+  const PokemonWidget({super.key, required this.pokemonName});
+  final String pokemonName;
+  @override
+  State<PokemonWidget> createState() => PokemonWidgetState();
+}
 
-  Future<List<PokemonResponse>> postsFuture = getPosts();
-
-  static Future<List<PokemonResponse>> getPosts() async {
-    var url = Uri.parse("https://pokeapi.co/api/v2/pokemon");
-    final response =
-        await http.get(url, headers: {"Content-Type": "application/json"});
-    final List body = json.decode(response.body);
-    return body.map((e) => PokemonResponse.fromJson(e)).toList();
-  }
-
-    @override
+class PokemonWidgetState extends State<PokemonWidget> {
+  late Future<PokemonOne> pokemon;
+  @override
   void initState() {
     super.initState();
-    getPosts();
+    pokemon = fetchPokemon(widget.pokemonName);
   }
 
- @override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        // FutureBuilder
-        child: FutureBuilder<List<PokemonResponse>>(
-          future: postsFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              // until data is fetched, show loader
-              return const CircularProgressIndicator();
-            } else if (snapshot.hasData) {
-              // once data is fetched, display it on screen (call buildPosts())
-              final posts = snapshot.data!;
-              return buildPosts(posts);
-            } else {
-              // if no data, show simple Text
-              return const Text("No data available");
-            }
-          },
-        ),
+    return Container(
+      padding: const EdgeInsets.all(15),
+      child: FutureBuilder<PokemonOne>(
+        future: pokemon,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return PokemonItem(pokemon: snapshot.data!);
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
+          }
+          return const CircularProgressIndicator();
+        },
       ),
-    );
-  }
-
-  Widget buildPosts(List<PokemonResponse> posts) {
-    // ListView Builder to show data in a list
-    return ListView.builder(
-      itemCount: posts.length,
-      itemBuilder: (context, index) {
-        final post = posts[index];
-        return Container(
-          color: Colors.grey.shade300,
-          // margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-          // padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-          // height: 100,
-          // width: 100,
-          child: Row(
-            children: [
-              Text(post.results![index].name.toString()),
-              // Text(post.name.toString()),
-              ]
-          ),
-        );
-      },
     );
   }
 }
