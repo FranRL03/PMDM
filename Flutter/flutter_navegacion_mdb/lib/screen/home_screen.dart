@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navegacion_mdb/models/people_item/people_item.dart';
+import 'package:flutter_navegacion_mdb/widget/people_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -16,10 +19,11 @@ class _HomeScreenState extends State<HomeScreen> {
       'Index 0: Welcome to MovieDB',
       style: optionStyle,
     ),
-    Text(
-      'Index 1: People',
-      style: optionStyle,
-    ),
+    // Text(
+    //   'Index 1: People',
+    //   style: optionStyle,
+    // ),
+    PeopleList(),
     Text(
       'Index 2: Movies',
       style: optionStyle,
