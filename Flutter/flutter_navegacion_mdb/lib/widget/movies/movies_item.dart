@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navegacion_mdb/widget/movies/movie_details.dart';
 
 import '../../models/movie_response/result.dart';
 
@@ -34,7 +35,14 @@ class MovieItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 20, bottom: 10),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MovieDetailsPage(
+                                      movieDetails: result,
+                                    )));
+                  },
                   child: const Text('Info'),
                 ),
               ),
