@@ -23,9 +23,9 @@ class MovieDetailsPage extends StatelessWidget {
                 Text(
                   '${movieDetails.originalTitle}',
                   style: const TextStyle(
-                    fontSize: 18, // Tamaño de la fuente
-                    fontWeight: FontWeight.bold, // Peso de la fuente
-                    color: Colors.black, // Color del texto
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
                 ),
                 Row(
@@ -36,8 +36,7 @@ class MovieDetailsPage extends StatelessWidget {
                     ),
                     Text('${movieDetails.popularity}',
                         style: const TextStyle(
-                          fontSize:
-                              18, // Tamaño de la fuente, // Color del texto
+                          fontSize: 18,
                         ))
                   ],
                 ),
@@ -46,9 +45,9 @@ class MovieDetailsPage extends StatelessWidget {
                 ),
                 const Text('Info',
                     style: TextStyle(
-                      fontSize: 20, // Tamaño de la fuente
-                      fontWeight: FontWeight.bold, // Peso de la fuente
-                      color: Colors.black, // Color del texto
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     )),
                 Text(
                   '${movieDetails.originalLanguage}',
@@ -60,14 +59,14 @@ class MovieDetailsPage extends StatelessWidget {
                   color: Colors.black,
                 ),
                 const Text('Overview',
-                style: TextStyle(
-                      fontSize: 20, // Tamaño de la fuente
-                      fontWeight: FontWeight.bold, // Peso de la fuente
-                      color: Colors.black, // Color del texto
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     )),
                 Text('${movieDetails.overview}',
                     style: const TextStyle(
-                      fontSize: 18, // Tamaño de la fuente, // Color del texto
+                      fontSize: 18,
                     ))
               ],
             ),
