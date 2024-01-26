@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navegacion_mdb/models/movie_response/result.dart';
+import 'package:flutter_navegacion_mdb/widget/movies/trailer_list_widget.dart';
 
 class MovieDetailsPage extends StatelessWidget {
   const MovieDetailsPage({super.key, required this.movieDetails});
@@ -67,7 +68,8 @@ class MovieDetailsPage extends StatelessWidget {
                 Text('${movieDetails.overview}',
                     style: const TextStyle(
                       fontSize: 18,
-                    ))
+                    )),
+                // TrailerList()
               ],
             ),
           ),
